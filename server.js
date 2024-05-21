@@ -7,7 +7,10 @@ const port = 3000;
 
 //middlewares
 app.set('view engine', 'ejs')
+//add css
 app.use(express.static('assets'))
+//add imgs
+app.use('/assets/', express.static('./assets'));
 app.use(bodyParser.urlencoded({ extended: false }))
 
 //creating server

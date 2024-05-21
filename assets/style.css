@@ -1,3 +1,143 @@
-body{
+*{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 40px;
+    padding-left: 40px;
+    background-color: rgb(244, 244, 244);
+
+
+}
+.nav_links{
+    display: flex;
+    gap: 20px;
+}
+ a{
+    text-decoration: none;
+    color: grey;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+nav ul a:hover{
+    color: black;
+}
+
+.sidebar_links{
+    display: flex;
+    transition: all .7s;
+    height: 0;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    padding-top: 20px;
+    padding: 20px 0 0 40px;
+    background-color: rgb(244, 244, 244);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    width: 50px;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+
+}
+
+.menu span{
+    width:26px;
+    border: 2px solid gray;
+    height: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+.active{
+    height: 200px;
+}
+.img{
+    border-radius: 20px;
+}
+.new_postbtn{
+    width: 200px;
+    height: 40px;
+    background-color: rgb(0, 133, 222);
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+.new_postbtn a, .read_morebtn a,.delete_btn a{
+    color: white;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.intro_heading{
+    margin-top: 25px;
+}
+
+.read_morebtn, .delete_btn{
+    width: 100px;
+    height: 30px;
+    background-color: rgba(8, 158, 63, 0.883);
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+.delete_btn{
     background-color: red;
+}
+.read_morebtn a, .delete_btn a{
+    font-size: 1em;
+}
+.blog{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    width: 600px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.blog_section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+@media (max-width:710px) {
+    header{
+        justify-content: space-between;
+    }
+    .menu{
+        display: flex;
+        margin-right:40px ;
+    }
+    .navbar{
+        display: none;
+    }
+    .img{
+        width: 100%;
+        border-radius: 0px;
+    }
+    .blog{
+        width: 100%;
+    }
 }

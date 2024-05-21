@@ -8,7 +8,75 @@
   </head>
   <body>
 
-    <h1>Blog</h1>
-    
+    <header>
+      <h1>Blog</h1>
+      <nav class="navbar">
+        <ul class="nav_links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
+    <nav class="sidebar">
+      <ul class="sidebar_links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+
+    <main>
+      <h1 class="intro_heading">Hey I'm Daniel WebDeveloper / Programmer</h1>
+      <img class="img" src="../assets/images/backgroundimg.jpg" width="600px" alt="laptop-img">
+      <button class="new_postbtn"><a href="#">New Post</a></button>
+    </main>
+
+    <div class="blog_section">
+      <div class="blog">
+        <h2 class="title">When to Use Static Generation</h2>
+        <p class="date">January 6, 2022</p>
+        <p class="description">We reconmend using Static generation with and without data</p>
+        <div class="action_btn">
+          <button class="read_morebtn"><a href="#">ReadMore</a></button>
+          <button class="delete_btn"><a href="#">Delete</a></button>
+        </div>
+      </div>
+
+      <div class="blog">
+        <h2 class="title">CSS vs TailWind CSS</h2>
+        <p class="date">January 6, 2022</p>
+        <p class="description">The Comparison between regular css and Tailwing css is happening more frequently as Tailwind overtakes Vanilar CSS in Popularity</p>
+        <div class="action_btn">
+          <button class="read_morebtn"><a href="#">ReadMore</a></button>
+          <button class="delete_btn"><a href="#">Delete</a></button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+  
+  <script>
+    let menu = document.querySelector(".menu");
+    let sidebar = document.querySelector(".sidebar_links")
+
+    menu.addEventListener("click", ()=>{
+      sidebar.classList.toggle("active")
+    })
+
+  </script>  
   </body>
   </html>
