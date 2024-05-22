@@ -1,55 +1,34 @@
   <link rel="stylesheet" href="style.css">
 
-  <%- include('partials/header.ejs') %>.
+  <%- include('partials/Header.ejs') %>.
 
 
     <main>
       <h1 class="intro_heading">Hey I'm Daniel WebDeveloper / Programmer</h1>
       <img class="img" src="../assets/images/backgroundimg.jpg" width="600px" alt="laptop-img">
-      <button class="new_postbtn"><a href="#">New Post</a></button>
+      <button class="new_postbtn"><a href="/routes/newpost">New Post</a></button>
     </main>
 
     <div class="blog_section">
-      <div class="blog">
-        <h2 class="title">When to Use Static Generation</h2>
-        <p class="date">January 6, 2022</p>
-        <p class="description">We reconmend using Static generation with and without data</p>
-        <div class="action_btn">
-          <button class="read_morebtn"><a href="#">ReadMore</a></button>
-          <button class="delete_btn"><a href="#">Delete</a></button>
-        </div>
-      </div>
 
-      <div class="blog">
-        <h2 class="title">CSS vs TailWind CSS</h2>
-        <p class="date">January 6, 2022</p>
-        <p class="description">The Comparison between regular css and Tailwing css is happening more frequently as Tailwind overtakes Vanilar CSS in Popularity</p>
-        <div class="action_btn">
-          <button class="read_morebtn"><a href="#">ReadMore</a></button>
-          <button class="delete_btn"><a href="#">Delete</a></button>
+      <% ShowBlogs.forEach(blog => {%>
+        <div class="blog">
+          <h2 class="title"><%= blog.title %></h2>
+          <p class="date"><%= blog.date.toLocaleDateString() %></p>
+          <p class="description"><%= blog.content %></p>
+          <div class="action_btn">
+            <button class="read_morebtn"><a href="#">ReadMore</a></button>
+            <button class="delete_btn"><a href="#">Delete</a></button>
+          </div>
         </div>
-      </div>
+      <%}); %>
 
+
+
+     
 
 
     </div>
 
-
-
-
-
-
-
-
-  
-  <script>
-    let menu = document.querySelector(".menu");
-    let sidebar = document.querySelector(".sidebar_links")
-
-    menu.addEventListener("click", ()=>{
-      sidebar.classList.toggle("active")
-    })
-
-  </script>  
   </body>
   </html>

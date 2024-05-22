@@ -8,9 +8,8 @@ mongoose.connect("mongodb://localhost:27017/blogs")
 
 const blogSchema = new mongoose.Schema({
     title: String,
-    descrption: String,
     blog: String,
-    date:Date
+    date: Date
 })
 
 module.exports = mongoose.model('Blog', blogSchema)

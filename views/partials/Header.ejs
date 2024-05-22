@@ -23,8 +23,21 @@
   </header>
   <nav class="sidebar">
     <ul class="sidebar_links">
-      <li><a href="#">Home</a></li>
+      <li><a href="/routes">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </nav>
+
+
+
+  
+  <script>
+    let menu = document.querySelector(".menu");
+    let sidebar = document.querySelector(".sidebar_links")
+
+    menu.addEventListener("click", ()=>{
+      sidebar.classList.toggle("active")
+    })
+
+  </script>  
