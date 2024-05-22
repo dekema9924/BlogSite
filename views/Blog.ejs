@@ -18,7 +18,7 @@
           <p class="description"><%= blog.content %></p>
           <div class="action_btn">
             <button class="read_morebtn"><a href="#">ReadMore</a></button>
-            <button class="delete_btn"><a href="#">Delete</a></button>
+            <button class="delete_btn"><a href="/routes/delete/<%= blog.id %>">Delete</a></button>
           </div>
         </div>
       <%}); %>
