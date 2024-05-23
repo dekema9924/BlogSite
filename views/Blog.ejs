@@ -15,11 +15,12 @@
         <div class="blog">
           <h2 class="title"><%= blog.title %></h2>
           <p class="date"><%= blog.date.toLocaleDateString() %></p>
-          <p class="description"><%= blog.content %></p>
-          <div class="action_btn">
-            <button class="read_morebtn"><a href="/routes/readmore/<%= blog.id %>">Read More</a>
-            </button>
-            <button class="delete_btn"><a href="/routes/delete/<%= blog._id %>">Delete</a></button>
+          <p class="description"><%= blog.blog %></p>
+          <div class="action_btns">
+            <button class="read_morebtn"><a href="/routes/readmore/<%= blog.id %>">Read More</a></button>
+            <form action="/routes/<%= blog._id %>?_method=DELETE" method="post">
+              <button type="submit" class="delete_btn">Delete</button>
+            </form>
           </div>
         </div>
       <%}); %>

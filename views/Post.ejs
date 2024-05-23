@@ -5,9 +5,9 @@
 
 
 <div class="back_btn">
-    <a href="/routes">BACK</a>
+    <a href="/routes">←BACK</a>
 </div>
-<form action="/routes/newpost" method="post">
+<form class="blog_form" action="/routes/newpost" method="post">
     <h2>New Post</h2>
 
     <label for="title">Title</label>
@@ -15,64 +15,17 @@
 
     <label for="content">Content</label>
     <textarea name="content"  cols="30" rows="10"></textarea>
-    <button type="submit">Post</button>
+    <button class="submit_btn" type="submit">Post</button>
 
 
 </form>
 
 
-<style>
-    .back_btn a{
-        color: black;
-        font-size: 1em;
-        text-decoration: underline;
+<script type="module">
+    import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+    document.getElementById('content').innerHTML =
+      marked.parse('# Marked in the browser\n\nRendered by **marked**.');
+  </script>
 
-    }
-    .back_btn{
-        margin-left: 30px;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        padding: 30px;
-        width: 500px;
-        margin: 0 auto;
-    }
-    input{
-        width: 100%;
-        height: 30px;
-        padding-left: 40px;
-        font-size: 1em;
-        border: 2px solid black;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        outline: none;
-    }
-    button[type="submit"]{
-        width: 100px;
-        height: 40px;
-        background-color: black;
-        color: white;
-        border-style: none;
-        margin-top: 10px;
-        cursor: pointer;
-    }
-    input[type = "text"]{
-        margin-bottom: 10px;
-    }
-    textarea{
-        border: 2px solid black;
-        padding: 30px;
-        font-size: 1.3em;
-        outline: none;
 
-    }
-    label{
-        font-weight: 900;
-    }
-    form h2{
-        margin-bottom: 20px;
-    }
-
-</style>
 
