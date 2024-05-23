@@ -104,6 +104,7 @@ main{
 }
 .read_morebtn a, .delete_btn a{
     font-size: 1em;
+    
 }
 .blog{
     display: flex;

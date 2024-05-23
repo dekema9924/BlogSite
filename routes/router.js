@@ -1,7 +1,10 @@
 
 const express = require('express');
 const routes = express.Router();
-const Blog = require('../database/db')
+const Blog = require('../database/db');
+const { ObjectId } = require('bson');
+
+
 
 
 //homepage
@@ -30,18 +33,28 @@ routes.post('/newpost', async (req,res)=>{
 })
 
 //delete route
-routes.get('/delete/:id', async (req,res)=>{
-    const id = req.params.id
+routes.get('/delete/:_id', async (req,res)=>{
+    const id = req.params._id
     const result = await Blog.findByIdAndDelete(id);
-    console.log(`Deleted${result.title}: `, id );
+    console.log(`Deleted ${result.title}: `, id );
     res.redirect('/routes')
     
 })
 
 
+//readmore route
+
+routes.get('/readmore/:id', async (req,res)=>{
+    let id = req.params.id;
+    const blog = await Blog.findById(id)
+    console.log(blog);
+    console.log(blog.id);
+
+    res.render('Readmore.ejs', {blog: blog})
 
 
-
+    
+})
 
 
 

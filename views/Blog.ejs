@@ -1,4 +1,4 @@
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 
   <%- include('partials/Header.ejs') %>.
 
@@ -17,8 +17,9 @@
           <p class="date"><%= blog.date.toLocaleDateString() %></p>
           <p class="description"><%= blog.content %></p>
           <div class="action_btn">
-            <button class="read_morebtn"><a href="#">ReadMore</a></button>
-            <button class="delete_btn"><a href="/routes/delete/<%= blog.id %>">Delete</a></button>
+            <button class="read_morebtn"><a href="/routes/readmore/<%= blog.id %>">Read More</a>
+            </button>
+            <button class="delete_btn"><a href="/routes/delete/<%= blog._id %>">Delete</a></button>
           </div>
         </div>
       <%}); %>
